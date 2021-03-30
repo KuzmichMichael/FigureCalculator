@@ -17,25 +17,21 @@ Square::Square(double sideLength)
 
 Square::~Square()
 {
-	delete this;
 }
 
-double Square::area()
+const double Square::area() const
 {
 	return sideLength * sideLength;
 }
 
-double Square::perimeter()
+const double Square::perimeter() const
 {
 	return 4 * sideLength;
 }
 
-void Square::paramReques()
+void Square::paramReques() 
 {
-		double sideLength;
-
 		std::cout << "Enter side length: " << std::endl;
 		std::cin >> sideLength;
-		this->sideLength = sideLength;
 }
 

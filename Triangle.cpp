@@ -17,24 +17,20 @@ Triangle::Triangle(double sideLength)
 
 Triangle::~Triangle()
 {
-	delete this;
 }
 
-double Triangle::area()
+const double Triangle::area() const
 {
 	return (sideLength * sideLength * sqrt(3)) / 4;
 }
 
-double Triangle::perimeter()
+const double Triangle::perimeter() const
 {
 	return sideLength * 3;
 }
 
 void Triangle::paramReques()
 {
-	double sideLength;
-
 	std::cout << "Enter side length: " << std::endl;
 	std::cin >> sideLength;
-	this->sideLength = sideLength;
 }

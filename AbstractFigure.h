@@ -1,21 +1,22 @@
 #pragma once
-#include "math.h"
+
+#define _USE_MATH_DEFINES
+#include <cmath>
 #include <iostream>
 #include <string>
-
-#define PI 3.14159265
 
 class AbstractFigure
 {
 public:
-	AbstractFigure();
-	~AbstractFigure();
-	virtual double area() = 0;
-	virtual double perimeter() = 0;
+	AbstractFigure() = default;
+	virtual ~AbstractFigure() = default;
+	const virtual double area() const = 0;
+	const virtual double perimeter() const = 0;
 	virtual void paramReques() = 0;
 
-	std::string getTitle();
+	const std::string getTitle() const;
 	void setTitle(std::string newTitle);
+
 private:
 	std::string title;
 };

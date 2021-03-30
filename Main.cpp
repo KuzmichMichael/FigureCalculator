@@ -5,9 +5,7 @@
 #include "Circle.h"
 #include "Triangle.h"
 
-using namespace std;
-
-enum figures
+enum class Figures
 {
 	SQUARE = 1,
 	RECTRANGLE,
@@ -22,56 +20,60 @@ int main() {
 	int figureChoise = 0;
 	char methodChoise = 0;
 
-	cout << "choose figure \n 1 - square \n 2 - rectangle \n 3 - triangle \n 4 - circle" << endl;
-	cin >> figureChoise;
+	std::cout << "choose figure \n 1 - square \n 2 - rectangle \n 3 - triangle \n 4 - circle" << std::endl;
+	std::cin >> figureChoise;
 
-	switch (figureChoise)
+	Figures figureChoiseEnum = static_cast<Figures>(figureChoise);
+
+	switch (figureChoiseEnum)
 	{
-	case SQUARE:
-		std::cout << "you choosed square " <<endl;
+	case Figures::SQUARE:
+		std::cout << "you choosed square " << std::endl;
 		figure = new Square();
 		figure->paramReques();
 		break;
 
-	case RECTRANGLE:
-		std::cout << "you choosed rectangle " << endl;
+	case Figures::RECTRANGLE:
+		std::cout << "you choosed rectangle " << std::endl;
 		figure = new Rectangle();
 		figure->paramReques();
 		break;
 
-	case TRIANGLE:
-		std::cout << "you choosed triangle " << endl;
+	case Figures::TRIANGLE:
+		std::cout << "you choosed triangle " << std::endl;
 		figure = new Triangle();
 		figure->paramReques();
 		break;
 
-	case CIRCLE:
-		std::cout << "you choosed circle " << endl;
+	case Figures::CIRCLE:
+		std::cout << "you choosed circle " << std::endl;
 		figure = new Circle();
 		figure->paramReques();
 		break;
 
 	default:
-		cout << "wrong number" << endl;
+		std::cout << "wrong number" << std::endl;
 		return 888;
 	}
 
-	cout << "choose method \n a - " << figure->getTitle() << " area \n p - " << figure->getTitle() << " perimeter" << endl;
-	cin >> methodChoise;
+	std::cout << "choose method \n a - " << figure->getTitle() << " area \n p - " << figure->getTitle() << " perimeter" << std::endl;
+	std::cin >> methodChoise;
 
 	switch (methodChoise)
 	{
 	case 'a':
-		cout << figure->getTitle() <<" area = " << figure->area();
+		std::cout << figure->getTitle() <<" area = " << figure->area();
 		break;
 
 	case 'p':
-		cout << figure->getTitle() << " perimeter = " << figure->perimeter();
+		std::cout << figure->getTitle() << " perimeter = " << figure->perimeter();
 		break;
 
 	default:
-		cout << "wrong symbol" << endl;
+		std::cout << "wrong symbol" << std::endl;
 		return 999;
 	}
+
+	delete figure;
 }
 

@@ -1,17 +1,6 @@
 #include "AbstractFigure.h"
 
-
-
-AbstractFigure::AbstractFigure()
-{
-}
-
-
-AbstractFigure::~AbstractFigure()
-{
-}
-
-std::string AbstractFigure::getTitle()
+const std::string AbstractFigure::getTitle() const
 {
 	return title;
 }

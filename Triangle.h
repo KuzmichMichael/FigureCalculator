@@ -7,8 +7,8 @@ public:
 	Triangle();
 	Triangle(double sideLength);
 	~Triangle();
-	virtual double area();
-	virtual double perimeter();
+	const double area() const override;
+	const double perimeter() const override;
 	virtual void paramReques();
 
 private:

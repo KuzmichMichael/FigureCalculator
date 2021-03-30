@@ -16,24 +16,20 @@ Circle::Circle(double radius)
 
 Circle::~Circle()
 {
-	delete this;
 }
 
-double Circle::area()
+const double Circle::area() const
 {
-	return PI * radius * radius;
+	return M_PI * radius * radius;
 }
 
-double Circle::perimeter()
+const double Circle::perimeter() const
 {
-	return 2.0f * PI * radius;
+	return 2.0f * M_PI * radius;
 }
 
 void Circle::paramReques()
 {
-	double radius;
-
 	std::cout << "Enter circle radius: " << std::endl;
 	std::cin >> radius;
-	this->radius = radius;
 }

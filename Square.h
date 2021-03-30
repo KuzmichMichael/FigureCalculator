@@ -6,9 +6,9 @@ class Square :
 public:
 	Square();
 	Square(double sideLength);
-	~Square();
-	virtual double area();
-	virtual double perimeter();
+	~Square(); 
+	const double area() const override;
+	const double perimeter() const override;
 	virtual void paramReques();
 
 private:
